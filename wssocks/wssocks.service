@@ -1,0 +1,13 @@
+[Unit]
+Description=WSSOCKS
+After=network.target 
+
+[Service]
+User=nobody
+Type=simple
+Restart=on-failure
+ExecStart=/usr/local/bin/wssocks server --addr 127.0.0.1:7688
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
